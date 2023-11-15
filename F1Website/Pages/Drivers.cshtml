@@ -1,0 +1,44 @@
+﻿@page
+@model F1Website.Pages.DriversModel
+@{
+    String[,] drivers = new String[,] {
+    { "1", "524 PTS", "MAX", "VERSTAPPEN","Red Bull Racing","1","https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/M/MAXVER01_Max_Verstappen/maxver01.png.transform/2col/image.png","#E30A20"},
+    { "2", "258 PTS", "SERGIO", "PEREZ","Red Bull Racing","11","https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/S/SERPER01_Sergio_Perez/serper01.png.transform/2col/image.png","#E30A20"},
+    { "3", "226 PTS", "LEWIS", "HAMILTON","Mercedes","44","https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LEWHAM01_Lewis_Hamilton/lewham01.png.transform/2col/image.png","#6CD3BF"},
+    { "4", "198 PTS", "FERNANDO", "ALONSO","Aston Martin","33","https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/F/FERALO01_Fernando_Alonso/feralo01.png.transform/2col/image.png","#39947A" },
+    { "5", "195 PTS", "LANDO", "NORRIS","Mclaren","4","https://media.formula1.com/d_driver_fallback_image.png/content/dam/fom-website/drivers/L/LANNOR01_Lando_Norris/lannor01.png.transform/2col/image.png","#F38516"}};
+}
+<div class="container">
+    <div class="d-flex align-items-center justify-content-between mt-4 border-bottom px-4 py-2 rounded-3 border-5 border-danger heading">
+        <div class="texts">
+            <span style="font-size: 50px; font-weight:bold">F1 Drivers 2023</span>
+        </div>
+    </div>
+    <div class="tweets d-flex flex-row">
+        <div class="row">
+            @for (var i = 0; i < 5; i++)
+            {
+                <div class="col-3 p-4">
+                    <div class="race rounded-3 p-3 border border-3">
+                        <div class="top-section d-flex align-items-center justify-content-between flex-row border-bottom border-3 pb-3">
+                            <span style="font-size: 30px" class="text-danger fw-bold">@drivers[i,0]</span>
+                            <span>@drivers[i,1]</span>
+                        </div>
+                        <div class="text-section border-bottom border-3 pb-3 d-flex flex-column">
+                            <span>@drivers[i,2]</span>
+                            <span class="fw-bold">@drivers[i,3]</span>
+                        </div>
+                        <div class="bottom-section d-flex flex-column justify-content-between">
+                            <span style="font-size: 12px" class="text-muted">@drivers[i,4]</span>
+                            <div class="align-items-end d-flex flex-row">
+                                <span style="font-size: 30px; color: @drivers[i,7]">@drivers[i,5]</span>
+                                <img src=@drivers[i,6] />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            <div class="w-100"></div>
+        </div>
+    </div>
+</div>

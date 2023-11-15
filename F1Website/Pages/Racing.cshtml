@@ -1,0 +1,51 @@
+﻿@page
+@model F1Website.Pages.RacingModel
+
+@{
+    String[,] arr = new String[,] { 
+    { "Round 1", "03 - 05 MAR", "Bahrain", "FORMULA 1 GULF AIR BAHRAIN GRAND PRIX 2023","VER","ALO","PER" },
+    { "Round 2", "17 - 19 MAR", "Saudi Arabia", "FORMULA 1 STC SAUDI ARABIAN GRAND PRIX 2023","VER","ALO","PER" },
+    { "Round 3", "31 - 02 MAR-APR", "Australia", "FORMULA 1 ROLEX AUSTRALIAN GRAND PRIX 2023","VER","ALO","PER" },
+    { "Round 4", "28 - 30 APR", "Azerbaijan", "FORMULA 1 AZERBAIJAN GRAND PRIX 2023","VER","ALO","PER" },
+    { "Round 5", "05 - 07 MAY", "United States", "FORMULA 1 CRYPTO.COM MIAMI GRAND PRIX 2023","VER","ALO","PER" }};
+}
+
+<div class="container">
+    <div class="d-flex align-items-center justify-content-between mt-4 border px-4 py-2 rounded-3 border-3 border-danger heading">
+        <div class="texts">
+            <h1>F1 Schedule 2023</h1>
+            <p>2023 FIA FORMULA ONE WORLD CHAMPIONSHIP™ RACE CALENDAR</p>
+        </div>
+        <div class="next-container px-5 py-2 rounded-3 border border-3 border-dark">
+            <p style="margin-bottom: -1px;">NEXT-ROUND 22</p>
+            <p style="margin-bottom: -1px;">UNITED STATES</p>
+            <p style="margin-bottom: -1px;">2023</p>
+        </div>
+    </div>
+    <div class="tweets d-flex flex-row">
+        <div class="row">
+            @for (var i = 0;i<5; i++)
+            {
+                <div class="col-3 p-4">
+                    <div class="race rounded-3 p-3 border border-3">
+                        <div class="top-section d-flex flex-column border-bottom border-3 pb-3">
+                            <span class="text-danger fw-bold">@arr[i,0]</span>
+                            <span>@arr[i,1]</span>
+                        </div>
+                        <div class="text-section border-bottom border-3 pb-3 d-flex flex-column gap-2">
+                                <span class="text-success">@arr[i,2]</span>
+                                <span>@arr[i,3]</span>
+                            </div>
+                        <div class="bottom-section d-flex flex-row justify-content-between">
+                            <span style="color: #C0C0C0">@arr[i,4]</span>
+                            <span style="color: #FFC000">@arr[i,5]</span>
+                            <span style="color: #CD7F32">@arr[i,6]</span>
+                            </div>
+                    </div>
+                </div>
+            }
+            
+            <div class="w-100"></div>
+        </div>
+    </div>
+</div>
